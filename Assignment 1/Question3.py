@@ -1,0 +1,30 @@
+import math #I needed to import math as I will use pi later on.
+print('Welcome to the area calculator. Choose one of the following shapes: sphere, triangle, rectangle or circle.') #Introduction message.
+shape=input('Which shape are you interested in?: ') #This will let the user enter which shape they are interested in.
+
+if shape=='sphere' or shape=='Sphere': #The code recognizes Sphere and sphere in case starts their word with a capital letter. == is used instead of = because we are verifying if the two are the same, if true, the program proceeds to the next line.
+    sph_radius=float(input('Please enter the radius of the sphere: ')) #The input is transformed into a float as the user may provide a number with decimals.
+    sph_area=4*math.pi*sph_radius**2 #This is the formula for obtaining the area of a sphere.
+    print('The area of a sphere of radius',sph_radius,'is',sph_area) #This message announces the result to the user and also reminds them of their initial input.
+
+elif shape=='triangle' or shape=='Triangle': #Same process but with a triangle.
+    tri_base=float(input('Please enter the base of the triangle: '))
+    tri_height=float(input('Please enter the height of the triangle: '))
+    tri_area=(((tri_base)*(tri_height))/2)
+    print('The area of a triangle of base',tri_base,'and height',tri_height,'is',tri_area)
+
+elif shape=='rectangle' or shape=='Rectangle': #Same process but with a rectangle.
+    rec_base=float(input('Please enter the base of the rectangle: '))
+    rec_height=float(input('Please enter the height of the rectangle: '))
+    rec_area=(rec_base)*(rec_height)
+    print('The area of a rectangle of base',rec_base,'and height',rec_height,'is',rec_area)
+
+elif shape=='circle' or shape=='Circle': #Same process but with a circle
+    cir_radius=float(input('Please enter the radius of the circle: '))
+    cir_area=(math.pi)*(cir_radius)**2
+    print('The area of a circle of radius',cir_radius,'is',cir_area)    
+
+else:
+    print('You have entered an invalid shape name. Only the following shapes are supported:') #Else is used in case the user inputs a shape that the program doesn't know.
+    print('sphere, triangle, rectangle or circle.') #A message listing the shapes the program knows is printed.
+    

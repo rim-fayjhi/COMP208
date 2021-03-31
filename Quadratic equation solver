@@ -1,0 +1,22 @@
+
+import math
+print('Welcome to the quadratic equation solver.') #This introduces the program/title.
+
+a=float(input('Please enter the value of "a": ')) #The inputs from the user are transformed into floats as they may contain decimals. This also allows mathematical operations to be done to the inputs later on.
+b=float(input('Please enter the value of "b": '))
+c=float(input('Please enter the value of "c": '))
+
+discriminant=((b*b)-(4*a*c)) #The discriminant is calculated using the square root math function. I used b*b instead of b**2 as it uses less characters.
+if discriminant>=0:
+    solution_1=((-b)-(math.sqrt(discriminant)))/(2*a) #Solution 1 and 2 use the same discriminant, a sign is what varies.
+    solution_2=((-b)+(math.sqrt(discriminant)))/(2*a) 
+    
+    if discriminant>0:   
+        print('The first solution is: ', solution_1) #The calculated solutions are printed for the user to see.
+        print('The second solution is: ', solution_2)  
+        
+    elif discriminant==0:
+        print('The only solution is: ', solution_1) #If the discriminant is equal to zero, there is only one real solution.
+        
+else:
+    print('The quadratic equation has no real solutions.') #If the discriminant is negative, there are no real solutions.
